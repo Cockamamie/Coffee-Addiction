@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,8 +6,10 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    private Vector2 movement;
+    public Camera camera;
 
+    private Vector2 movement;
+    private Vector2 mousePosition;
     private void MovementInput()
     {
         var dx = Input.GetAxisRaw("Horizontal");
@@ -20,11 +19,15 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = movement * speed;
+        var lookingDirectory = mousePosition - rb.position;
+        var angle = Mathf.Atan2(lookingDirectory.y, lookingDirectory.x) * Mathf.Rad2Deg - 90;
+        rb.rotation = angle;
     }
 
     // Update is called once per frame
     private void Update()
     {
         MovementInput();
+        mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
     }
 }
