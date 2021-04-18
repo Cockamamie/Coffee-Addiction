@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.Coffee Addiction.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Projects\Coffee-Addiction\Coffee Addiction\.idea\.idea.Coffee Addiction\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
