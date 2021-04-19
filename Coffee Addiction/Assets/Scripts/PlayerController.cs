@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    public Camera camera;
+    [FormerlySerializedAs("camera")] public Camera cam;
 
     private Vector2 movement;
     private Vector2 mousePosition;
@@ -28,6 +29,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         MovementInput();
-        mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 }
