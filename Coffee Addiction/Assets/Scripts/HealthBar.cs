@@ -6,19 +6,16 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
-    public Image bar;
-    public Sprite greenBar;
+    public Image healthBar;
     public Sprite yellowBar;
     public Sprite redBar;
     public void SetHealth(float health)
     {
         slider.value = health;
-        if (slider.value > 60)
-            bar.sprite = greenBar;
         if (slider.value <= 60 && slider.value > 20)
-            bar.sprite = yellowBar;
+            healthBar.sprite = yellowBar;
         if (slider.value <= 20)
-            bar.sprite = redBar;
+            healthBar.sprite = redBar;
     }
 
     public void SetMaxHealth(float health)

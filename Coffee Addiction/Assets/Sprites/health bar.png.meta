@@ -3,17 +3,11 @@ guid: 52dfab4289ad8364b8dc516c4fd29e46
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5871183766331710411
-    second: health bar_0
-  - first:
-      213: -8201765689491667245
-    second: health bar_1
-  - first:
-      213: 493191929905480679
-    second: health bar_2
-  - first:
       213: 4229895541145518299
     second: health bar_3
+  - first:
+      213: -3172231875377720213
+    second: health bar_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,9 +163,9 @@ TextureImporter:
       name: health bar_3
       rect:
         serializedVersion: 2
-        x: 9
-        y: 101
-        width: 76
+        x: 124
+        y: 113
+        width: 19
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,6 +176,27 @@ TextureImporter:
       bones: []
       spriteID: bd0ccfe659b93ba30800000000000000
       internalID: 4229895541145518299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health bar_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 98
+        width: 57
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6490f2aae7f9f3d0800000000000000
+      internalID: -3172231875377720213
       vertices: []
       indices: 
       edges: []
