@@ -7,10 +7,10 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    [FormerlySerializedAs("camera")] public Camera cam;
+    //[FormerlySerializedAs("camera")] public Camera cam;
 
     private Vector2 movement;
-    private Vector2 mousePosition;
+    //private Vector2 mousePosition;
     private void MovementInput()
     {
         var dx = Input.GetAxisRaw("Horizontal");
@@ -20,15 +20,15 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = movement * speed;
-        var lookingDirectory = mousePosition - rb.position;
+        /*var lookingDirectory = mousePosition - rb.position;
         var angle = Mathf.Atan2(lookingDirectory.y, lookingDirectory.x) * Mathf.Rad2Deg - 90;
-        rb.rotation = angle;
+        rb.rotation = angle;*/
     }
 
     // Update is called once per frame
     private void Update()
     {
         MovementInput();
-        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        //mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 }
