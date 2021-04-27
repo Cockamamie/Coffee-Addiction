@@ -4,7 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     private const float MaxHealth = 100;
     public float currentHealth;
-    public HealthBar healthBar;
+    [SerializeField] private HealthBar healthBar;
     private void Start()
     {
         currentHealth = MaxHealth;
@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void LoopedHealthUpdater()
     {
-        const float decreasedAmount = 5;
+        const float decreasedAmount = 10;
         DecreaseHealth(decreasedAmount);
     }
     
@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             DecreaseHealth(5);
+        if (currentHealth == 0)
+            Destroy(gameObject);
     }
 
     private void DecreaseHealth(float amount)

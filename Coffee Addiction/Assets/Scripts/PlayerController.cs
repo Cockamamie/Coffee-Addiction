@@ -3,9 +3,9 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
 
-    public float speed;
+    private const float Speed = 30;
 
     //[FormerlySerializedAs("camera")] public Camera cam;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = movement * speed;
+        rb.velocity = movement * Speed;
         /*var lookingDirectory = mousePosition - rb.position;
         var angle = Mathf.Atan2(lookingDirectory.y, lookingDirectory.x) * Mathf.Rad2Deg - 90;
         rb.rotation = angle;*/
