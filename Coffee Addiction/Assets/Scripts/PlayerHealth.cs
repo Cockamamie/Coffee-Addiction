@@ -22,8 +22,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             DecreaseHealth(5);
-        if (currentHealth == 0)
-            Destroy(gameObject);
+        /*if (currentHealth == 0)
+            Destroy(gameObject);*/
     }
 
     private void DecreaseHealth(float amount)
