@@ -4,8 +4,8 @@ using static System.Math;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-
-    private const float Speed = 30;
+    private const int DefaultSpeed = 30;
+    public int speed;
     private Animator playerAnimation;
     private Vector2 movement;
     private static readonly int MoveX = Animator.StringToHash("moveX");
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int LastY = Animator.StringToHash("lastY");
     private void Start()
     {
+        speed = DefaultSpeed;
         playerAnimation = GetComponent<Animator>();
     }
 
@@ -26,13 +27,13 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        rb.velocity = movement * Speed;
+        rb.velocity = movement * speed;
     }
     
     private void Update()
     {
         MovementInput();
-            playerAnimation.SetFloat(MoveX, rb.velocity.x);
+        playerAnimation.SetFloat(MoveX, rb.velocity.x);
         playerAnimation.SetFloat(MoveY, rb.velocity.y);
 
         if (Abs(Input.GetAxisRaw("Horizontal")) == 1 || Abs(Input.GetAxisRaw("Vertical")) == 1)

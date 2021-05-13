@@ -5,16 +5,38 @@ public class SkinChanger : MonoBehaviour
     private Animator animator; 
     [SerializeField] private RuntimeAnimatorController zombieSkin;
     [SerializeField] private RuntimeAnimatorController humanSkin;
-    private PlayerHealth playerHealth;
+    [SerializeField] private RuntimeAnimatorController smoke;
+    [SerializeField] private PlayerHealth playerHealth;
+    private bool isHuman = true;
+    
+    private void SetHumanSkin()
+    {
+        animator.runtimeAnimatorController = humanSkin;
+    }
+    
+    private void SetZombieSkin()
+    {
+        animator.runtimeAnimatorController = zombieSkin;
+    }
     
     private void Start()
     {
-        playerHealth = gameObject.GetComponent<PlayerHealth>();
+        playerHealth.OnHealthChange.AddListener(health =>
+        {
+            if (health <= 20 && isHuman)
+            {
+                isHuman = false;
+                animator.runtimeAnimatorController = smoke;
+                Invoke(nameof(SetZombieSkin), 1);
+            }
+            
+            if (health > 20 && !isHuman)
+            {
+                isHuman = true;
+                animator.runtimeAnimatorController = smoke;
+                Invoke(nameof(SetHumanSkin), 1);
+            }
+        });
         animator = gameObject.GetComponent<Animator>();
     }
-
-    private void Update() =>
-        animator.runtimeAnimatorController = 
-            playerHealth.currentHealth <= 20 ? zombieSkin : humanSkin;
-    
 }

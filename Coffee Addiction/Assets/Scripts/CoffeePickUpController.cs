@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoffeePickUpController : MonoBehaviour
 {
     private bool isPickUpAllowed;
-    private const float HealingAmount = 20;
+    private const int HealingAmount = 20;
     [SerializeField] private PlayerHealth playerHealthScript;
 
     private void Update()

@@ -3,22 +3,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
-    public Image healthBar;
-    public Sprite yellowBar;
-    public Sprite redBar;
-    public void SetHealth(float health)
-    {
-        slider.value = health;
-        if (slider.value <= 60 && slider.value > 20)
-            healthBar.sprite = yellowBar;
-        if (slider.value <= 20)
-            healthBar.sprite = redBar;
-    }
+    [SerializeField] private Slider slider;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private Sprite yellowBar;
+    [SerializeField] private Sprite redBar;
+    [SerializeField] private PlayerHealth playerHealth;
 
-    public void SetMaxHealth(float health)
+    private void Start()
     {
-        slider.maxValue = health;
-        SetHealth(health);
+        playerHealth.OnHealthChange.AddListener(health =>
+        {
+            if (health <= 60 && health > 20)
+                healthBar.sprite = yellowBar;
+            if (health <= 20)
+                healthBar.sprite = redBar;
+            slider.value = health;
+        });
     }
 }

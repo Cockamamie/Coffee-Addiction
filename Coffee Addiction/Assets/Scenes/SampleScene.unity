@@ -292,7 +292,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.25, y: 0.45}
-    newSize: {x: 1, y: 0.8828125}
+    newSize: {x: 4.37, y: 4.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 122927696}
+  speed: 0
 --- !u!212 &122927699
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 4.37, y: 4.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -425,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieSkin: {fileID: 22100000, guid: b87a40672c804424fa5463d3b7e96bbc, type: 2}
   humanSkin: {fileID: 9100000, guid: b80c65431b34de14cbab10f93c9c5c7a, type: 2}
+  smoke: {fileID: 22100000, guid: 41837930250751945b69c660b88ce29f, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
