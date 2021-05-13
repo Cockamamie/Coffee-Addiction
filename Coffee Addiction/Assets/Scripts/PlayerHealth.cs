@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
     private const float MaxHealth = 100;
     public float currentHealth;
     [SerializeField] private HealthBar healthBar;
+
     private void Start()
     {
         currentHealth = MaxHealth;
@@ -16,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         const float decreasedAmount = 10;
         DecreaseHealth(decreasedAmount);
+
     }
     
     private void Update()

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         MovementInput();
-        playerAnimation.SetFloat(MoveX, rb.velocity.x);
+            playerAnimation.SetFloat(MoveX, rb.velocity.x);
         playerAnimation.SetFloat(MoveY, rb.velocity.y);
 
         if (Abs(Input.GetAxisRaw("Horizontal")) == 1 || Abs(Input.GetAxisRaw("Vertical")) == 1)
