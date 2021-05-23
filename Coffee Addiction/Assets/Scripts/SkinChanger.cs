@@ -27,7 +27,7 @@ public class SkinChanger : MonoBehaviour
             {
                 isHuman = false;
                 animator.runtimeAnimatorController = smoke;
-                Invoke(nameof(SetZombieSkin), 1);
+                Invoke(nameof(SetZombieSkin), smoke.animationClips[0].length);
             }
             
             if (health > 20 && !isHuman)
