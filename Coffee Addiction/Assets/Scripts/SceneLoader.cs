@@ -1,19 +1,22 @@
 using System.Collections;
-using  UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SceneLoader : MonoBehaviour
 {
     public Animator transition;
-    public float transitionTime = 1;
+    public float transitionTime = 1f;
     private static readonly int Start = Animator.StringToHash("Start");
 
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            LoadNextScene();
+        }
     }
 
-    public void LoadNextScene()
+    private void LoadNextScene()
     {
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
