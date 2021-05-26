@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+        Debug.Log("Exit pressed!");
     }
 
     public void Rules(int index)
