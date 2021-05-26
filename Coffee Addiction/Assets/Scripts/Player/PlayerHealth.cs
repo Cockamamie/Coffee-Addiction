@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = MaxHealth;
+        currentHealth = SceneManager.GetActiveScene().buildIndex <=  1 ? MaxHealth : OnSceneTransit.hp;
         InvokeRepeating(nameof(LoopedHealthUpdater),5,5);
     }
 
