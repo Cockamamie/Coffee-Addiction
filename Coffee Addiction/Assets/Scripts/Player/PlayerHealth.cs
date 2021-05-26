@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,8 +24,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            DecreaseHealth(5);
+        if (currentHealth >= 100)
+            currentHealth = 100;
+        if (currentHealth > 0) return;
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 
     private void DecreaseHealth(int amount)
